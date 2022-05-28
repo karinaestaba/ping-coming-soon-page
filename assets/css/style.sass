@@ -65,7 +65,7 @@ b
 
   &-footer
     grid-area: c-footer
-    padding: 125px 10px 78px
+    padding: 147px 10px 78px
 
     .copyright
       display: block
@@ -91,7 +91,7 @@ b
     color: $very_dark_blue
 
 .banner
-  padding: 96px 50px
+  padding: 50px 40px
   
   &-img
     img
@@ -104,13 +104,13 @@ b
   flex-wrap: wrap
   justify-content: center
   align-items: center
-  gap: 57px
-  margin-bottom: 73px
+  gap: 27px
+  margin-bottom: 59px
   padding: 0
 
   > li
-    width: 30px
-    height: 30px
+    width: 60px
+    height: 60px
     border: 1px solid #e9ecf5
     border-radius: 50%
     display: flex
@@ -144,12 +144,12 @@ form
 
   &.container
     max-width: 560px
-    padding: 39px 0
+    padding: 39px 20px
 
   input
     display: block
     border: 1px solid #c7d2f2
-    padding: 24px 63px
+    padding: 24px 20px
     border-radius: 78px
     color: $very_dark_blue
     font-size: 23px
@@ -199,6 +199,18 @@ form
       &.type-mismatch
         + .error::after
           content: 'Please provide a valid email address'
+
+@media screen and ( min-width: 558px)
+  form
+    &.container
+      padding: 39px 0
+
+    input
+      padding: 24px 63px
+
+  .banner
+    padding: 96px 50px
+
 
 @media screen and ( min-width: 998px)
   body
@@ -274,6 +286,9 @@ form
     margin-bottom: 23px
 
     li
+      width: 30px
+      height: 30px
+
       img
         width: 16px
 
