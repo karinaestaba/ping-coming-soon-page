@@ -122,6 +122,13 @@ b
       filter: $to_blue
       display: block
 
+    &:hover
+      background-color: $blue
+      transition: background 1s
+
+      img
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(358deg) brightness(105%) contrast(101%)
+
 .error
   display: none
 
@@ -141,7 +148,7 @@ form
 
   input
     display: block
-    border: 2px solid #c7d2f2
+    border: 1px solid #c7d2f2
     padding: 24px 63px
     border-radius: 78px
     color: $very_dark_blue
@@ -164,6 +171,10 @@ form
 
     &:hover
       cursor: pointer
+      background-color: #7195f5
+      border-color: #7195f5
+      transition: all .5s
+      box-shadow: #4f7df3 2px 3px 19px -5px
 
   &.invalid
     input
@@ -219,8 +230,18 @@ form
     flex-direction: row
     max-width: 637px
     justify-content: center
-    align-items: center
+    align-items: start
     padding: 38px 0
+
+    &.invalid
+      input
+        &:not(:focus)
+          + .error
+            margin-top: 7px
+            font-size: 12px
+            line-height: 20px
+            margin-left: 34px
+            text-align: left
     
     &.container
       max-width: 100%
