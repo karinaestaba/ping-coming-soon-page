@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <title>Ping coming soon page</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <header class="main-header">
@@ -19,9 +19,12 @@
     <span class="description">Subscribe and get notified</span>
   </section>
   
-  <form action="/" id="searchForm" class="search-form container" method="GET">
-    <input type="email" name="email" id="email" placeholder="Your email address...">
-    <button type="submit" id="searchSubmitButton">Notify Me</button>
+  <form action="/" id="subscriptionForm" class="subscription-form container" method="GET" autocomplete="on">
+    <fieldset>
+      <input type="email" name="email" id="emailInput" placeholder="Your email address..." required>
+      <span class="error"></span>
+    </fieldset>
+    <button type="submit" id="subscriptionButton">Notify Me</button>
   </form>
   
   <div class="banner">
@@ -53,6 +56,6 @@
     &copy; Copyright Ping. All rights reserved.
   </span>
 </footer>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>

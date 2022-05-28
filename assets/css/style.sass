@@ -7,13 +7,17 @@ $font_size: 20px
 $font_family: 'Libre Franklin', sans-serif
 $to_blue: invert(38%) sepia(100%) saturate(739%) hue-rotate(197deg) brightness(99%) contrast(93%)
 
-*,
-*::afer,
-*::before
+*
   box-sizing: border-box
   margin: 0
   padding: 0
   outline: 0
+
+  &::afer, &::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    outline: 0
 
 html,
 body
@@ -71,7 +75,7 @@ b
       line-height: 18px
 
 .hero
-  padding: 14px 10px 25px
+  padding: 51px 10px 25px
   text-align: center
 
   h1
@@ -100,8 +104,8 @@ b
   flex-wrap: wrap
   justify-content: center
   align-items: center
-  gap: 27px
-  margin-bottom: 60px
+  gap: 57px
+  margin-bottom: 73px
   padding: 0
 
   > li
@@ -118,6 +122,14 @@ b
       filter: $to_blue
       display: block
 
+.error
+  display: none
+
+fieldset
+  border: none
+  display: flex
+  flex-direction: column
+
 form
   display: flex
   flex-direction: column
@@ -125,21 +137,20 @@ form
 
   &.container
     max-width: 560px
-    padding: 39px 30px
+    padding: 39px 0
 
   input
     display: block
-    background-color: transparent
     border: 2px solid #c7d2f2
     padding: 24px 63px
     border-radius: 78px
     color: $very_dark_blue
     font-size: 23px
 
-  ::placeholder
-    color: #c7cce2
-    font-family: $font_family
-    
+    ::placeholder
+      color: #c7cce2
+      font-family: $font_family
+
   button
     display: block
     background-color: $blue
@@ -153,3 +164,27 @@ form
 
     &:hover
       cursor: pointer
+
+  &.invalid
+    input
+      &:not(:focus)
+        border-color: $light_red
+
+        + .error
+          display: block
+          text-align: center
+          color: $light_red
+          margin-top: 10px
+          margin-bottom: 24px
+          font-size: 21px
+          line-height: 31px
+          font-weight: 300
+          font-style: italic
+
+      &.empty
+        + .error::after
+          content: 'Email cannot be empty'
+
+      &.type-mismatch
+        + .error::after
+          content: 'Please provide a valid email address'
