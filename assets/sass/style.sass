@@ -71,7 +71,7 @@ b
       display: block
       color: $gray
       text-align: center
-      font-size: 20px
+      font-size: 15px
       line-height: 18px
 
 .hero
@@ -79,14 +79,14 @@ b
   text-align: center
 
   h1
-    font-size: 44px
-    line-height: 50px
+    font-size: 33px
+    line-height: 40px
     margin-bottom: 39px
     font-weight: 300
 
   .description
     margin-bottom: 20px
-    font-size: 24px
+    font-size: 20px
     line-height: 30px
     color: $very_dark_blue
 
@@ -199,6 +199,21 @@ form
       &.type-mismatch
         + .error::after
           content: 'Please provide a valid email address'
+
+.credits
+  font-size: 12px
+  line-height: 1.5
+  padding: 20px
+  text-align: center
+
+  a
+    text-decoration: none
+    color: $blue
+    white-space: nowrap
+    transition: color .3s ease
+
+    &:hover
+      color: darken($blue, 15)
 
 @media screen and ( min-width: 558px)
   form
